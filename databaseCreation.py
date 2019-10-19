@@ -8,7 +8,7 @@ def create_table():
 
 
 def data_entry():
-    c.execute("INSERT INTO blob VALUES('gameName','0.00','https...')")
+    c.execute("INSERT INTO prices VALUES('gameName','0.00','https...')")
 
     conn.commit()
     c.close()
