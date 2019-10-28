@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 
 # Connect to our database
-connection = sqlite3.connect('steamPrices.db')
+connection = sqlite3.connect('steam_prices.db')
 # Make our cursor
 c = connection.cursor()
 

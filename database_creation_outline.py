@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('steamPrices.db')
+conn = sqlite3.connect('steam_prices.db')
 c = conn.cursor()
 
 def create_table():
