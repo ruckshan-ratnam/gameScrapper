@@ -1,4 +1,5 @@
 import sqlite3
+import json
 
 # Connect to all the databases
 gog = sqlite3.connect('gogPrices.db')
@@ -48,7 +49,8 @@ for i in steamData:
 
 # Union all the sets together and turn into a list and sort in alph order
 all_games_alph = (list(set().union(gog_games,game_billet_games,humble_bundle_games,mac_store_games,steam_games))).sort()
-
+with open('game_list.json','r') as f:
+    json.dump(all_games_alph,f,indent=4)
 
 # Add all games to the master database
 master_database_connection = sqlite3.connect('master_database.db')
