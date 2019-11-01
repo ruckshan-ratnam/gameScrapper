@@ -49,7 +49,7 @@ for i in steamData:
 
 # Union all the sets together and turn into a list and sort in alph order
 all_games_alph = (list(set().union(gog_games,game_billet_games,humble_bundle_games,mac_store_games,steam_games))).sort()
-with open('game_list.json','r') as f:
+with open('game_list.json','w',encoding='utf-8') as f:
     json.dump(all_games_alph,f,indent=4)
 
 # Add all games to the master database
