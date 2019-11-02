@@ -56,7 +56,7 @@ with open('game_list.json','w',encoding='utf-8') as f:
 master_database_connection = sqlite3.connect('master_database.db')
 master_db_cursor = master_database_connection.cursor()
 master_db_cursor.execute("CREATE TABLE IF NOT EXISTS prices(gameName TEXT, gogPrice TEXT, gogLink TEXT, macPrice TEXT, macLink TEXT, billetPrice TEXT, billetLink TEXT, humblePrice TEXT, humbleLink TEXT, steamPrice TEXT, steamLink TEXT)")
-master_db_cursor.execute("INSERT INTO prices VALUES('gameName','0.00','https...','0.00','https...','0.00','https...','0.00','https...','0.00','https...')")
+# master_db_cursor.execute("INSERT INTO prices VALUES('gameName','0.00','https...','0.00','https...','0.00','https...','0.00','https...','0.00','https...')")
 master_database_connection.commit()
 
 sql_select_query = """SELECT * FROM prices WHERE gameName = ?"""

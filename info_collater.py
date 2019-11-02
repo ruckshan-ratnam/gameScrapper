@@ -38,6 +38,7 @@ for i in game_names:
         max_players = data[10].text
         co_op = data[11].text
     except:
+        print("could not find {}".format(i))
         game_name = None
         platform = None
         release_date = None
