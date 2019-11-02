@@ -2,7 +2,7 @@ import requests
 import sqlite3
 
 # Connect to our database
-connection = sqlite3.connect('macPrices.db')
+connection = sqlite3.connect('mac_store_database.db')
 # Make our cursor
 c = connection.cursor()
 

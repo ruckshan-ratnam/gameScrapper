@@ -15,7 +15,7 @@ links = []
 for i in products:
     names.append(i['name'])
     prices.append(i['special_price'])
-    links.append(i['url'+"/?affiliate=f09c3ba0-355b-4ace-80d8-91edf2f7a8a3"])
+    links.append(i['url'] + "/?affiliate=f09c3ba0-355b-4ace-80d8-91edf2f7a8a3")
 
 
 def insert_into_db(game_name,game_link,game_price):
