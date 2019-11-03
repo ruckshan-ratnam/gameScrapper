@@ -48,7 +48,8 @@ for i in steamData:
     steam_games.add(i[0])
 
 # Union all the sets together and turn into a list and sort in alph order
-all_games_alph = (list(set().union(gog_games,game_billet_games,humble_bundle_games,mac_store_games,steam_games))).sort()
+all_games_alph = list(set().union(gog_games,game_billet_games,humble_bundle_games,mac_store_games,steam_games))
+all_games_alph.sort()
 with open('game_list.json','w',encoding='utf-8') as f:
     json.dump(all_games_alph,f,indent=4)
 
@@ -74,7 +75,7 @@ for i in all_games_alph:
     humble_name = humbleCursor.fetchone()
     steam_name = steamCursor.fetchone()
     
-    master_db_cursor.execute("INSERT INTO prices (gameName, gogPrice, gogLink, macPrice, macLink, billetPrice, billetLink, humblePrice, humbleLink, steamPrice, steamLink) VALUES (?,?,?,?,?,?,?,?,?,?,?)",(i, "none", "none", "none", "none", "none","none", "none", "none", "none", "none", "none"))
+    master_db_cursor.execute("INSERT INTO prices (gameName, gogPrice, gogLink, macPrice, macLink, billetPrice, billetLink, humblePrice, humbleLink, steamPrice, steamLink) VALUES (?,?,?,?,?,?,?,?,?,?,?)",(i, "none", "none", "none", "none", "none","none", "none", "none", "none", "none"))
     master_database_connection.commit()
 
     if gog_name is not None:

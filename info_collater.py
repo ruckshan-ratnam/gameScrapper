@@ -12,8 +12,10 @@ with open('game_list.json','r') as r:
 
 for i in game_names:
     
+    # see if dir exists first
+    
     # Get the link to the game
-    search = requests.get(url+game_names.replace(" ","%20"))
+    search = requests.get(url+i.replace(" ","%20"))
     link_to_game = (BeautifulSoup(search.text,'html.parser')).find("a","list-item")['href']
     
     # Go to that link
@@ -62,6 +64,8 @@ for i in game_names:
         "max players" : max_players,
         "co-op" : co_op
         }
-
-    with open(i+'/'+json_data['game']+'.json', 'w', encoding='utf-8') as f:
-        json.dump(json_data,f,indent=4)
+    try:
+        with open(i+'/'+json_data['game']+'.json', 'w', encoding='utf-8') as f:
+            json.dump(json_data,f,indent=4)
+    except:
+        pass
