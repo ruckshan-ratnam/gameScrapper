@@ -25,18 +25,3 @@ echo "merging databases into master databases"
 python3 /database_scrapping/master_db_collater.py
 
 echo "databases done"
-
-echo "making dirs for games"
-
-mkdir game_info
-mv game_dir_maker.py game_info
-python3 /game_info/game_dir_maker.py
-
-echo "dirs made"
-
-echo "getting info for games"
-
-mv info_collater.py game_info
-python3 /game_info/info_collater.py
-
-echo "done!"
